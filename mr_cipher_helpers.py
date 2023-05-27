@@ -20,14 +20,18 @@ month_dict = {
 def print_welcome_message():
     # prints welcome message to user
     print("""
-    WELCOME TO MY
-             _         __               
-      _____ (_)____   / /_   ___   _____
-     / ___// // __ \ / __ \ / _ \ / ___/
-    / /__ / // /_/ // / / //  __// /    
-    \___//_// .___//_/ /_/ \___//_/     
-           /_/                                            
-                              GENERATOR!                                                                                                                                                                                                                                                    
+
+ /$$      /$$ /$$$$$$$                  /$$           /$$                          
+| $$$    /$$$| $$__  $$                |__/          | $$                          
+| $$$$  /$$$$| $$  \ $$        /$$$$$$$ /$$  /$$$$$$ | $$$$$$$   /$$$$$$   /$$$$$$ 
+| $$ $$/$$ $$| $$$$$$$/       /$$_____/| $$ /$$__  $$| $$__  $$ /$$__  $$ /$$__  $$
+| $$  $$$| $$| $$__  $$      | $$      | $$| $$  \ $$| $$  \ $$| $$$$$$$$| $$  \__/
+| $$\  $ | $$| $$  \ $$      | $$      | $$| $$  | $$| $$  | $$| $$_____/| $$      
+| $$ \/  | $$| $$  | $$      |  $$$$$$$| $$| $$$$$$$/| $$  | $$|  $$$$$$$| $$      
+|__/     |__/|__/  |__//$$$$$$\_______/|__/| $$____/ |__/  |__/ \_______/|__/      
+                      |______/             | $$                                    
+                                           | $$                                    
+                                           |__/                                                                                                                                                                                                                                                     
     """)
 
 
@@ -39,4 +43,3 @@ def write_to_file(user_month, user_text, converted_text):  # defines function th
                           f"Converted ciphertext: {converted_text}\n"  # writes the converted output to file
                           f"Logged at {current_date_time.strftime('%H:%M:%S on %a %d/%B/%y')}")  # logs time/date
     print("~ Log of conversion sent to 'converted_text.txt' file")  # displays confirmation of log generation
-
