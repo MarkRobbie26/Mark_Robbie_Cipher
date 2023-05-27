@@ -41,7 +41,7 @@ def print_welcome_message():
 
 def write_to_file(user_month, user_text, converted_text):  # defines function that will write to text file
     current_date_time = datetime.datetime.now()
-    with open(f"{current_date_time.strftime('%Y%m%d%H%M%S&f')}", "w") as output_file:  # uses with statement to open file as alias. also closes file
+    with open(f"cipher_logs/{current_date_time.strftime('%Y%m%d%H%M%S&f')}", "w") as output_file:  # uses with statement to open file as alias. also closes file
         output_file.write(f"User birth month: {user_month}\n"  # writes users birth month to opened file
                           f"Initial user input: {user_text}\n"  # writes users input to be converted to file
                           f"Converted ciphertext: {converted_text}\n"  # writes the converted output to file
