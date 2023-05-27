@@ -1,4 +1,4 @@
-import datetime
+import datetime  # imports module to allow formatting of data/time
 
 # defines a dictionary with the shift values for each month
 month_dict = {
@@ -17,8 +17,7 @@ month_dict = {
 }
 
 
-def print_welcome_message():
-    # prints welcome message to user
+def print_welcome_message():  # prints welcome message to user
     print("""
   __  __          _____  _  ___  _____                         
  |  \/  |   /\   |  __ \| |/ ( )/ ____|                        
@@ -39,11 +38,11 @@ def print_welcome_message():
     """)
 
 
-def write_to_file(user_month, user_text, converted_text):  # defines function that will write to text file
-    current_date_time = datetime.datetime.now()
-    with open(f"cipher_logs/{current_date_time.strftime('%Y%m%d%H%M%S&f')}", "w") as output_file:  # uses with statement to open file as alias. also closes file
+def write_to_file(user_month, user_text, converted_text):  # defines function allowing user to write data to file
+    current_date_time = datetime.datetime.now()  # assigns current time/date to a variable
+    with open(f"cipher_logs/{current_date_time.strftime('%Y%m%d%H%M%S&f')}", "w") as output_file:  # uses 'with' statement to open file as alias
         output_file.write(f"User birth month: {user_month}\n"  # writes users birth month to opened file
                           f"Initial user input: {user_text}\n"  # writes users input to be converted to file
                           f"Converted ciphertext: {converted_text}\n"  # writes the converted output to file
-                          f"Logged at {current_date_time.strftime('%H:%M:%S on %a %d/%B/%y')}")  # logs time/date
+                          f"Logged at {current_date_time.strftime('%H:%M:%S on %a %d/%B/%y')}")  # formats and logs time/date
     print("~ Log of conversion sent to 'converted_text.txt' file")  # displays confirmation of log generation

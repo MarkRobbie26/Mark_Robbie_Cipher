@@ -1,15 +1,15 @@
 import sys  # imports sys module to allow us to exit program safely
-from mr_cipher_helpers import print_welcome_message, write_to_file
-from mr_cipher_class import CipherConverter
+from mr_cipher_helpers import print_welcome_message, write_to_file  # imports custom helper functions
+from mr_cipher_class import CipherConverter  # imports custom module containing Class
 
 
 if __name__ == "__main__":  # allows execution of code if run as main program and not imported
     while True:  # enters while loop which allows us to repeat the program or break from loop to exit
         try:
-            print_welcome_message()
-            instance = CipherConverter()
-            instance.run_cipher()
-            write_to_file(instance.user_birth_month, instance.user_text_input, instance.converted_text)
+            print_welcome_message()  # displays welcome message to user
+            instance = CipherConverter()  # creates instance of class
+            instance.run_cipher()  # calls run_cipher on instance
+            write_to_file(instance.user_birth_month, instance.user_text_input, instance.converted_text)  # writes instance dta to file
             repeat = input("~ Would you like to run the cipher again? ('Y'/'N' to quit): ").upper()  # asks user if they would like to repeat prog
             if repeat != "Y":  # checks if user entered Y to repeat program
                 print("~ User has closed the program.")  # displays exit message
