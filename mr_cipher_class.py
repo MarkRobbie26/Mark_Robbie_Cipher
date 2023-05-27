@@ -1,49 +1,49 @@
-from tqdm import tqdm
-from time import sleep
-import mr_cipher_helpers
+from tqdm import tqdm  # imports module to create progress bar
+from time import sleep  # imports module to pause program
+import mr_cipher_helpers  # imports module containing custom functions/data
 
 
-class CipherConverter:
-    def __init__(self):
-        self.user_birth_month = None
-        self.user_text_input = None
-        self.converted_text = ""
+class CipherConverter:  # declares CipherConverter class using CapWords convention # TODO python docs class names
+    def __init__(self):  # initializes current instance
+        self.user_birth_month = None  # assigns user birth month to None
+        self.user_text_input = None  # assigns user input to None
+        self.converted_text = None  # assigns converted text to None
 
-    def get_birth_month(self):
-        while True:  # enters while block to get users birth month
-            user_birth_month = input("~ Please begin by entering your birth month (Jan/Feb/...): ").title()  # gets birth month
-            if user_birth_month not in mr_cipher_helpers.month_dict:  # checks if given month is valid
+    def get_birth_month(self):  # defines method to get users birth month
+        while True:
+            user_birth_month = input("~ Please begin by entering your birth month (Jan/Feb/...): ").title()  # assigns input as birth month
+            if user_birth_month not in mr_cipher_helpers.month_dict:  # checks if given month is not valid
                 print("~ That was not a valid selection, please try again.")  # displays message stating month is invalid
             else:
-                self.user_birth_month = user_birth_month
-                print(f"~ Month entered: {user_birth_month}")  # if month is valid, month will be printed back to user
+                self.user_birth_month = user_birth_month  # assigns given month as users birth month if valid
+                print(f"~ Month entered: {user_birth_month}")  # prints users valid birth month
                 break  # breaks from while loop because valid month has been entered
 
-    def get_user_text_input(self):
+    def get_user_text_input(self):  # defines method to get input to be converted
         while True:
-            user_text_input = input("~ Please enter the phrase you would like to convert to ciphertext: ")
-            if len(user_text_input) > 0:
-                self.user_text_input = user_text_input
-                print(f"~ Text to be converted: '{self.user_text_input}'")
-                break
+            user_text_input = input("~ Please enter the phrase you would like to convert to ciphertext: ")  # assigns input as text to be converted
+            if len(user_text_input) > 0:  # ensures the user entered something
+                self.user_text_input = user_text_input  # assigns user input as users text input
+                print(f"~ Text to be converted: '{self.user_text_input}'")  # prints users text input
+                break  # breaks from while loop because valid text has been entered
             else:
-                print("ERROR. You did not enter anything. Try again.")
+                print("ERROR. You did not enter anything. Try again.")  # displays error message if input was blank
 
-    def convert_text(self):  # defines function used to generate ciphertext. takes user input and month
-        for character in self.user_text_input:  # iterates through each character in given text
+    def convert_text(self):  # defines method to convert user input to ciphertext
+        for character in self.user_text_input:  # iterates through each character in given input
             if character.isalpha():  # checks if the character is alphabetic, will be converted if so
-                a_unicode = ord("A") if character.isupper() else ord("a")
-                converted_character_unicode = ord(character) + mr_cipher_helpers.month_dict[self.user_birth_month]
-                converted_character_unicode = (converted_character_unicode - a_unicode) % 26
-                self.converted_text += chr(a_unicode + converted_character_unicode)
+                a_unicode = ord("A") if character.isupper() else ord("a")  # sets base 'a' depending on lower/upper
+                converted_character_unicode = ord(character) + mr_cipher_helpers.month_dict[self.user_birth_month]  # applies offset for each character
+                converted_character_unicode = (converted_character_unicode - a_unicode) % 26  # mod 26 to ensure eny char after 'z' begins at 'a'
+                self.converted_text += chr(a_unicode + converted_character_unicode)  # concatenates each converted character
             else:
-                self.converted_text += character
-        print("......CONVERTING TO CIPHERTEXT......")
-        for _ in tqdm([i for i in range(10)]):
-            sleep(0.1)
-        print(f"~ Converted text: {self.converted_text}")
+                self.converted_text += character  # concatenates character if not alphabetic
+        print("......CONVERTING TO CIPHERTEXT......")  # displays message stating conversion is taking place
+        for _ in tqdm([i for i in range(10)]):  # splits progress bar into 10 sections
+            sleep(0.1)  # pauses execution for 0.1 per section for a total of 1 second
+        print(f"~ Converted text: {self.converted_text}")  # displays converted text to user
 
-    def run_cipher(self):
-        self.get_birth_month()
-        self.get_user_text_input()
-        self.convert_text()
+    def run_cipher(self):  # defines method to run whole instance
+        self.get_birth_month()  # calls get_birth_month on current instance
+        self.get_user_text_input()  # calls get_user_text_input on current instance
+        self.convert_text()  # # calls convert_text on current instance
