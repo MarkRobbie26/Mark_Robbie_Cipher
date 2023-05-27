@@ -16,7 +16,7 @@ class CipherConverter:
                 print("~ That was not a valid selection, please try again.")  # displays message stating month is invalid
             else:
                 self.user_birth_month = user_birth_month
-                print(f"~ Month entered: {user_birth_month}.")  # if month is valid, month will be printed back to user
+                print(f"~ Month entered: {user_birth_month}")  # if month is valid, month will be printed back to user
                 break  # breaks from while loop because valid month has been entered
 
     def get_user_text_input(self):
@@ -24,7 +24,7 @@ class CipherConverter:
             user_text_input = input("~ Please enter the phrase you would like to convert to ciphertext: ")
             if len(user_text_input) > 0:
                 self.user_text_input = user_text_input
-                print(f"~ Text to be converted: '{self.user_text_input}'.")
+                print(f"~ Text to be converted: '{self.user_text_input}'")
                 break
             else:
                 print("ERROR. You did not enter anything. Try again.")
