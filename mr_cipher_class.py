@@ -7,7 +7,7 @@ class CipherConverter:  # declares CipherConverter class using CapWords conventi
     def __init__(self):  # initializes current instance
         self.user_birth_month = None  # assigns user birth month to None
         self.user_text_input = None  # assigns user input to None
-        self.converted_text = None  # assigns converted text to None
+        self.converted_text = ""  # assigns converted text to empty string
 
     def get_birth_month(self):  # defines method to get users birth month
         while True:
@@ -21,7 +21,7 @@ class CipherConverter:  # declares CipherConverter class using CapWords conventi
 
     def get_user_text_input(self):  # defines method to get input to be converted
         while True:
-            user_text_input = input("~ Please enter the phrase you would like to convert to ciphertext: ")  # assigns input as text to be converted
+            user_text_input = input(r"~ Please enter the phrase you would like to convert to ciphertext: ")  # assigns raw input as text to be converted
             if len(user_text_input) > 0:  # ensures the user entered something
                 self.user_text_input = user_text_input  # assigns user input as users text input
                 print(f"~ Text to be converted: '{self.user_text_input}'")  # prints users text input
