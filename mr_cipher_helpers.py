@@ -45,4 +45,4 @@ def write_to_file(user_month, user_text, converted_text):  # defines function al
                           f"Initial user input: {user_text}\n"  # writes users input to be converted to file
                           f"Converted ciphertext: {converted_text}\n"  # writes the converted output to file
                           f"Logged at {current_date_time.strftime('%H:%M:%S on %a %d/%B/%y')}")  # formats and logs time/date
-    print("~ Log of conversion sent to 'converted_text.txt' file")  # displays confirmation of log generation
+    print("~ All cipher logs have been sent to log directory...")  # displays confirmation of log generation
