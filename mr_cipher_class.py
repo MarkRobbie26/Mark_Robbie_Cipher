@@ -3,7 +3,7 @@ from time import sleep  # imports module to pause program
 import mr_cipher_helpers  # imports module containing custom functions/data
 
 
-class CipherConverter:  # declares CipherConverter class using CapWords convention # TODO python docs class names
+class CipherConverter:  # declares CipherConverter class using CapWords convention
     def __init__(self):  # initializes current instance
         self.user_birth_month = None  # assigns user birth month to None
         self.user_text_input = None  # assigns user input to None
