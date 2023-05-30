@@ -19,7 +19,6 @@ month_dict = {
 
 def print_welcome_message():  # prints welcome message to user
     print("""
-
   __  __          _____  _  ___  _____                         
  |  \/  |   /\   |  __ \| |/ ( )/ ____|                        
  | \  / |  /  \  | |__) | ' /|/| (___                          
@@ -37,10 +36,9 @@ def print_welcome_message():  # prints welcome message to user
  | |  __| |__  |  \| | |__  | |__) |  /  \  | | | |  | | |__) |
  | | |_ |  __| | . ` |  __| |  _  /  / /\ \ | | | |  | |  _  / 
  | |__| | |____| |\  | |____| | \ \ / ____ \| | | |__| | | \ \ 
-  \_____|______|_| \_|______|_|  \_/_/    \_|_|  \____/|_|  \_\                                                              
-                                                               
-                                                                                                                                                                  
-    """)
+  \_____|______|_| \_|______|_|  \_/_/    \_|_|  \____/|_|  \_\ 
+  
+  """)
 
 
 def write_to_file(user_month, user_text, converted_text):  # defines function allowing user to write data to file
