@@ -1,3 +1,4 @@
+import os  # imports module used for creation of directory if not existent
 import datetime  # imports module to allow formatting of data/time
 
 # defines a dictionary with the shift values for each month
@@ -43,6 +44,9 @@ def print_welcome_message():  # prints welcome message to user
 
 def write_to_file(user_month, user_text, converted_text):  # defines function allowing user to write data to file
     current_date_time = datetime.datetime.now()  # assigns current time/date to a variable
+    directory = "cipher_logs/"  # assigns directory location to variable
+    if not os.path.exists(directory):  # checks if directory exists
+        os.makedirs(directory)  # creates directory if non-existent
     with open(f"cipher_logs/{current_date_time.strftime('%Y%m%d%H%M%S&f')}", "w") as output_file:  # uses 'with' statement to open file as alias
         output_file.write(f"User birth month: {user_month}\n"  # writes users birth month to opened file
                           f"Initial user input: {user_text}\n"  # writes users input to be converted to file

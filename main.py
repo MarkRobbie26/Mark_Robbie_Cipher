@@ -7,9 +7,9 @@ if __name__ == "__main__":  # allows execution of code if run as main program an
     while True:  # enters while loop which allows us to repeat the program or break from loop to exit
         try:
             print_welcome_message()  # displays welcome message to user
-            instance = CipherConverter()  # creates instance of class
+            instance = CipherConverter()  # instantiation of object
             instance.run_cipher()  # calls run_cipher on instance
-            write_to_file(instance.user_birth_month, instance.user_text_input, instance.converted_text)  # writes instance dta to file
+            write_to_file(instance.user_birth_month, instance.user_text_input, instance.converted_text)  # writes instance data to file
             repeat = input("~ Would you like to run the cipher again? ('Y'/'N' to quit): ").upper()  # asks user if they would like to repeat prog
             if repeat != "Y":  # checks if user entered Y to repeat program
                 print("~ User has closed the program.")  # displays exit message
