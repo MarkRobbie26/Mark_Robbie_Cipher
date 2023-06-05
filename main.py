@@ -1,3 +1,4 @@
+# Mark Robbie
 import sys  # imports sys module to allow us to exit program safely
 from mr_cipher_helpers import print_welcome_message, write_to_file  # imports custom helper functions
 from mr_cipher_class import CipherConverter  # imports custom module containing Class
